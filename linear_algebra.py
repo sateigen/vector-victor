@@ -3,7 +3,10 @@ class ShapeError(Exception):
 
 
 def shape(vector):
-    return(len(vector), )
+    if is_matrix(vector):
+        return (len(vector), len(vector[0]))
+    else:
+        return (len(vector), )
 
 
 def vector_add(vector1, vector2):
@@ -48,7 +51,18 @@ def vector_mean(*args):
 
 def magnitude(vector):
     return sum([value ** 2 for value in vector]) ** (1/2)
-    """
-    magnitude([a b])  = sqrt(a^2 + b^2)
-    magnitude(Vector) = Scalar
-    """
+
+
+def is_matrix(matrix):
+    if type(matrix[0]) == list:
+        return True
+    else:
+        return False
+
+
+def matrix_row(matrix, row_number):
+    return matrix[row_number]
+
+
+def matrix_col(matrix, col_number):
+    return [col[col_number] for col in matrix]
