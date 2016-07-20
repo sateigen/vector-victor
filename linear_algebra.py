@@ -66,3 +66,21 @@ def matrix_row(matrix, row_number):
 
 def matrix_col(matrix, col_number):
     return [col[col_number] for col in matrix]
+
+
+def matrix_add(matrix1, matrix2):
+    if not compare_shapes(matrix1, matrix2):
+        raise ShapeError
+    else:
+        return [vector_add(vector1, vector2) for vector1, vector2 in zip(matrix1, matrix2)]
+
+
+def matrix_sub(matrix1, matrix2):
+    if not compare_shapes(matrix1, matrix2):
+        raise ShapeError
+    else:
+        return [vector_sub(vector1, vector2) for vector1, vector2 in zip(matrix1, matrix2)]
+# def test_matrix_matrix_add():
+#     assert matrix_add(A, B) == [[2, 2, 3],
+#                                 [4, 6, 6],
+#                                 [7, 8, 10]]
