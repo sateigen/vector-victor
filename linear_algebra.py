@@ -46,7 +46,9 @@ def vector_mean(*args):
     return [sum(value) / len(value) for value in zip(*args)]
 
 
-"""
-mean([a b], [c d]) = [mean(a, c) mean(b, d)]
-mean(Vector)       = Vector
-"""
+def magnitude(vector):
+    return sum([value ** 2 for value in vector]) ** (1/2)
+    """
+    magnitude([a b])  = sqrt(a^2 + b^2)
+    magnitude(Vector) = Scalar
+    """
