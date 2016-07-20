@@ -40,11 +40,13 @@ def dot(vector1, vector2):
 
 def vector_multiply(vector, number):
     return [number * factor for factor in vector]
-        #
-        # def test_vector_multiply():
-        #     """
-        #     [a b]  *  Z     = [a*Z b*Z]
-        #     Vector * Scalar = Vector
-        #     """
-        #     assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
-        #     assert vector_multiply(m, 2) == [6, 8]
+
+
+def vector_mean(*args):
+    return [sum(value) / len(value) for value in zip(*args)]
+
+
+"""
+mean([a b], [c d]) = [mean(a, c) mean(b, d)]
+mean(Vector)       = Vector
+"""
