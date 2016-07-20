@@ -38,11 +38,13 @@ def dot(vector1, vector2):
         return sum([value1 * value2 for value1, value2 in zip(vector1, vector2)])
 
 
-# def test_dot():
-#     """
-#     dot([a b], [c d])   = a * c + b * d
-#     dot(Vector, Vector) = Scalar
-#     """
-#     assert dot(w, y) == 160
-#     assert dot(m, n) == 15
-#     assert dot(u, z) == 0
+def vector_multiply(vector, number):
+    return [number * factor for factor in vector]
+        #
+        # def test_vector_multiply():
+        #     """
+        #     [a b]  *  Z     = [a*Z b*Z]
+        #     Vector * Scalar = Vector
+        #     """
+        #     assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
+        #     assert vector_multiply(m, 2) == [6, 8]
