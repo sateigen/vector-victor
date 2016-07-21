@@ -84,3 +84,22 @@ def matrix_sub(matrix1, matrix2):
 
 def matrix_scalar_multiply(matrix, scalar):
         return [vector_multiply(vector, scalar) for vector in matrix]
+
+
+def matrix_vector_multiply(matrix, vector):
+    return([dot(new_vector, vector) for new_vector in matrix])
+
+
+
+# def test_matrix_vector_multiply():
+#     """
+#     [[a b]   *  [x   =   [a*x+b*y
+#      [c d]       y]       c*x+d*y
+#      [e f]                e*x+f*y]
+#
+#     Matrix * Vector = Vector
+#     """
+#     assert matrix_vector_multiply(A, [2, 5, 4]) == [2, 5, 4]
+#     assert matrix_vector_multiply(B, [1, 2, 3]) == [14, 32, 50]
+#     assert matrix_vector_multiply(C, [3, 4]) == [11, 10, 11]
+#     assert matrix_vector_multiply(D, [0, 1, 2]) == [8, 4]
