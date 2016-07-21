@@ -10,14 +10,14 @@ def shape(vector):
 
 
 def vector_add(vector1, vector2):
-    if shape(vector1) != shape(vector2):
+    if not compare_shapes(vector1, vector2):
         raise ShapeError
     else:
         return [sum(values) for values in zip(vector1, vector2)]
 
 
 def vector_sub(vector1, vector2):
-    if shape(vector1) != shape(vector2):
+    if not compare_shapes(vector1, vector2):
         raise ShapeError
     else:
         return [item1 - item2 for item1, item2 in zip(vector1, vector2)]
@@ -35,14 +35,14 @@ def compare_shapes(*args):
 
 
 def dot(vector1, vector2):
-    if shape(vector1) != shape(vector2):
+    if not compare_shapes(vector1, vector2):
         raise ShapeError
     else:
         return sum([value1 * value2 for value1, value2 in zip(vector1, vector2)])
 
 
-def vector_multiply(vector, number):
-    return [number * factor for factor in vector]
+def vector_multiply(vector, scalar):
+    return [scalar * factor for factor in vector]
 
 
 def vector_mean(*args):
@@ -80,7 +80,7 @@ def matrix_sub(matrix1, matrix2):
         raise ShapeError
     else:
         return [vector_sub(vector1, vector2) for vector1, vector2 in zip(matrix1, matrix2)]
-# def test_matrix_matrix_add():
-#     assert matrix_add(A, B) == [[2, 2, 3],
-#                                 [4, 6, 6],
-#                                 [7, 8, 10]]
+
+
+def matrix_scalar_multiply(matrix, scalar):
+        return [vector_multiply(vector, scalar) for vector in matrix]
