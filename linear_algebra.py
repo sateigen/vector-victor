@@ -89,7 +89,7 @@ def matrix_scalar_multiply(matrix, scalar):
 def matrix_vector_multiply(matrix, vector):
     return([dot(new_vector, vector) for new_vector in matrix])
 
-# 
+#
 # def matrix_matrix_multiply(matrix1, matrix2):
 #     matrix2_rows, matrix2_cols = shape(matrix2)
 #     return[matrix_vector_multiply(matrix1, vector) for vector in matrix2]
